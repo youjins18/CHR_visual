@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<robot name="cone_harvest_robot">
+  <!--
+    RViz model generated from the validated MuJoCo description.
+    Root convention: FLU body frame in an ENU, +Z-up world.
+  -->
+  <material name="chr_black">
+    <color rgba="0.025 0.025 0.03 1"/>
+  </material>
+  <material name="chr_white">
+    <color rgba="0.92 0.92 0.94 1"/>
+  </material>
+  <material name="chr_orange">
+    <color rgba="1 0.28 0.015 1"/>
+  </material>
+
+  <link name="palletrone">
+    <visual>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/palletrone/BODY.stl"
+              scale="1 1 1"/>
+      </geometry>
+      <material name="chr_black"/>
+    </visual>
+  </link>
+
+  <link name="rotor_0">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/palletrone/PROP.stl"
+              scale="1 1 1"/>
+      </geometry>
+      <material name="chr_orange"/>
+    </visual>
+  </link>
+  <joint name="rotor_0_tilt_joint" type="revolute">
+    <parent link="palletrone"/>
+    <child link="rotor_0"/>
+    <origin xyz="0.148492 0.148492 0.07" rpy="0 0 0.7853981634"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="4"/>
+  </joint>
+
+  <link name="rotor_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/palletrone/PROP.stl"
+              scale="1 1 1"/>
+      </geometry>
+      <material name="chr_orange"/>
+    </visual>
+  </link>
+  <joint name="rotor_1_tilt_joint" type="revolute">
+    <parent link="palletrone"/>
+    <child link="rotor_1"/>
+    <origin xyz="-0.148492 0.148492 0.07" rpy="0 0 2.3561944902"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="4"/>
+  </joint>
+
+  <link name="rotor_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/palletrone/PROP.stl"
+              scale="1 1 1"/>
+      </geometry>
+      <material name="chr_orange"/>
+    </visual>
+  </link>
+  <joint name="rotor_2_tilt_joint" type="revolute">
+    <parent link="palletrone"/>
+    <child link="rotor_2"/>
+    <origin xyz="-0.148492 -0.148492 0.07" rpy="0 0 -2.3561944902"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="4"/>
+  </joint>
+
+  <link name="rotor_3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/palletrone/PROP.stl"
+              scale="1 1 1"/>
+      </geometry>
+      <material name="chr_orange"/>
+    </visual>
+  </link>
+  <joint name="rotor_3_tilt_joint" type="revolute">
+    <parent link="palletrone"/>
+    <child link="rotor_3"/>
+    <origin xyz="0.148492 -0.148492 0.07" rpy="0 0 -0.7853981634"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="4"/>
+  </joint>
+
+  <!-- arm_mount=(-0.10, 0, -0.13) in the Z-up Palletrone body frame. -->
+  <link name="arm_base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/arm/base_link.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="chr_white"/>
+    </visual>
+  </link>
+  <joint name="arm_mount" type="fixed">
+    <parent link="palletrone"/>
+    <child link="arm_base_link"/>
+    <origin xyz="-0.10 0 -0.13" rpy="3.1415926536 0 0"/>
+  </joint>
+
+  <link name="arm_link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/arm/link1.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="chr_black"/>
+    </visual>
+  </link>
+  <joint name="J1" type="revolute">
+    <parent link="arm_base_link"/>
+    <child link="arm_link1"/>
+    <origin xyz="0 0 0.04475" rpy="-1.5708 -1.5708 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="10" velocity="1"/>
+  </joint>
+
+  <link name="arm_link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/arm/link2.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="chr_white"/>
+    </visual>
+  </link>
+  <joint name="J2" type="revolute">
+    <parent link="arm_link1"/>
+    <child link="arm_link2"/>
+    <origin xyz="0.333 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.5235987756" effort="10" velocity="1"/>
+  </joint>
+
+  <link name="arm_link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/arm/link3.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="chr_black"/>
+    </visual>
+  </link>
+  <joint name="J3" type="revolute">
+    <parent link="arm_link2"/>
+    <child link="arm_link3"/>
+    <origin xyz="0.0835 0 0" rpy="-1.5708 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="10" velocity="1"/>
+  </joint>
+
+  <link name="arm_link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://chr_description/meshes/arm/link4.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="chr_white"/>
+    </visual>
+  </link>
+  <joint name="arm_link3_to_link4" type="fixed">
+    <parent link="arm_link3"/>
+    <child link="arm_link4"/>
+    <origin xyz="0.081 0 0" rpy="-1.5708 0 -1.5708"/>
+  </joint>
+
+  <link name="tcp"/>
+  <joint name="tcp_fixed" type="fixed">
+    <parent link="arm_link4"/>
+    <child link="tcp"/>
+    <origin xyz="0 0 0.25" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>chr_description</name>
+  <version>0.1.0</version>
+  <description>MuJoCo model and mesh assets for the cone harvest robot.</description>
+  <maintainer email="chldbwls08@seoultech.ac.kr">youjins18</maintainer>
+  <author email="chldbwls08@seoultech.ac.kr">youjins18</author>
+  <license>BSD-3-Clause</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

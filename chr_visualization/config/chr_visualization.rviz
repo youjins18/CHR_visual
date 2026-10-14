@@ -1,0 +1,234 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /RobotModel1
+        - /TF1/Frames1
+      Splitter Ratio: 0.5
+    Tree Height: 620
+  - Class: rviz_common/Selection
+    Name: Selection
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz_common/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: ""
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.25
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 40; 40; 40
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        J1:
+          Value: false
+        J2:
+          Value: false
+        J3:
+          Value: false
+        arm_base_link:
+          Value: false
+        arm_link1:
+          Value: false
+        arm_link2:
+          Value: false
+        arm_link3:
+          Value: false
+        arm_link4:
+          Value: false
+        desired_position:
+          Value: true
+        palletrone:
+          Value: true
+        rotor_0:
+          Value: false
+        rotor_1:
+          Value: false
+        rotor_2:
+          Value: false
+        rotor_3:
+          Value: false
+        tcp:
+          Value: true
+        world_enu:
+          Value: false
+      Marker Scale: 0.18
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Update Interval: 0
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: Palletrone flight data
+      Namespaces: {}
+      Topic:
+        Depth: 10
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /chr/visualization/flight_markers
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 255; 71; 4
+      Enabled: true
+      Head Diameter: 0.03
+      Head Length: 0.02
+      Length: 0.3
+      Line Style: Lines
+      Line Width: 0.008
+      Name: Current TCP path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 71; 4
+      Pose Style: None
+      Radius: 0.03
+      Shaft Diameter: 0.01
+      Shaft Length: 0.1
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /chr/visualization/tcp_path
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 5; 71; 255
+      Enabled: true
+      Head Diameter: 0.03
+      Head Length: 0.02
+      Length: 0.3
+      Line Style: Lines
+      Line Width: 0.008
+      Name: Target TCP path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 5; 71; 255
+      Pose Style: None
+      Radius: 0.03
+      Shaft Diameter: 0.01
+      Shaft Length: 0.1
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /chr/visualization/tcp_target_path
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 153; 193; 241
+    Fixed Frame: world_enu
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+      Line color: 128; 128; 0
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 2.4
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 1.0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.62
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 0.78
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 900
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1400
+  X: 100
+  Y: 70
