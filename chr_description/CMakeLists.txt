@@ -3,5 +3,5 @@ project(chr_description)
 
 find_package(ament_cmake REQUIRED)
 install(DIRECTORY mujoco meshes urdf DESTINATION share/${PROJECT_NAME})
-install(FILES README.md DESTINATION share/${PROJECT_NAME})
+
 ament_package()

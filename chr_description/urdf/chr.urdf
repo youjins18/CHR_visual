@@ -114,9 +114,10 @@
 
   <link name="arm_link1">
     <visual>
+      <!-- Change length and its half-length center offset together. -->
+      <origin xyz="0 0 0.1665"/>
       <geometry>
-        <mesh filename="package://chr_description/meshes/arm/link1.STL"
-              scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.01" length="0.333"/>
       </geometry>
       <material name="chr_black"/>
     </visual>
@@ -124,64 +125,8 @@
   <joint name="J1" type="revolute">
     <parent link="arm_base_link"/>
     <child link="arm_link1"/>
-    <origin xyz="0 0 0.04475" rpy="-1.5708 -1.5708 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="-1.5708" upper="1.5708" effort="10" velocity="1"/>
-  </joint>
-
-  <link name="arm_link2">
-    <visual>
-      <geometry>
-        <mesh filename="package://chr_description/meshes/arm/link2.STL"
-              scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="chr_white"/>
-    </visual>
-  </link>
-  <joint name="J2" type="revolute">
-    <parent link="arm_link1"/>
-    <child link="arm_link2"/>
-    <origin xyz="0.333 0 0" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="0" upper="0.5235987756" effort="10" velocity="1"/>
-  </joint>
-
-  <link name="arm_link3">
-    <visual>
-      <geometry>
-        <mesh filename="package://chr_description/meshes/arm/link3.STL"
-              scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="chr_black"/>
-    </visual>
-  </link>
-  <joint name="J3" type="revolute">
-    <parent link="arm_link2"/>
-    <child link="arm_link3"/>
-    <origin xyz="0.0835 0 0" rpy="-1.5708 0 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="-1.5708" upper="1.5708" effort="10" velocity="1"/>
-  </joint>
-
-  <link name="arm_link4">
-    <visual>
-      <geometry>
-        <mesh filename="package://chr_description/meshes/arm/link4.STL"
-              scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="chr_white"/>
-    </visual>
-  </link>
-  <joint name="arm_link3_to_link4" type="fixed">
-    <parent link="arm_link3"/>
-    <child link="arm_link4"/>
-    <origin xyz="0.081 0 0" rpy="-1.5708 0 -1.5708"/>
-  </joint>
-
-  <link name="tcp"/>
-  <joint name="tcp_fixed" type="fixed">
-    <parent link="arm_link4"/>
-    <child link="tcp"/>
-    <origin xyz="0 0 0.25" rpy="0 0 0"/>
+    <origin xyz="0 0 0.04475" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="1.5708" effort="10" velocity="1"/>
   </joint>
 </robot>

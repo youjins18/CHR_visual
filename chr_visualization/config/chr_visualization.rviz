@@ -69,21 +69,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm_link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         palletrone:
           Alpha: 1
           Show Axes: false
@@ -109,10 +94,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        tcp:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Mass Properties:
         Inertia: false
         Mass: false
@@ -130,12 +111,6 @@ Visualization Manager:
           Value: false
         arm_link1:
           Value: false
-        arm_link2:
-          Value: false
-        arm_link3:
-          Value: false
-        arm_link4:
-          Value: false
         palletrone:
           Value: true
         rotor_0:
@@ -146,8 +121,6 @@ Visualization Manager:
           Value: false
         rotor_3:
           Value: false
-        tcp:
-          Value: true
         world_enu:
           Value: false
       Marker Scale: 0.18000000715255737
@@ -160,11 +133,7 @@ Visualization Manager:
           palletrone:
             arm_base_link:
               arm_link1:
-                arm_link2:
-                  arm_link3:
-                    arm_link4:
-                      tcp:
-                        {}
+                {}
             rotor_0:
               {}
             rotor_1:
@@ -186,62 +155,6 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /chr/visualization/flight_markers
-      Value: true
-    - Alpha: 1
-      Buffer Length: 1
-      Class: rviz_default_plugins/Path
-      Color: 255; 71; 4
-      Enabled: true
-      Head Diameter: 0.029999999329447746
-      Head Length: 0.019999999552965164
-      Length: 0.30000001192092896
-      Line Style: Lines
-      Line Width: 0.00800000037997961
-      Name: Current TCP path
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Pose Color: 255; 71; 4
-      Pose Style: None
-      Radius: 0.029999999329447746
-      Shaft Diameter: 0.009999999776482582
-      Shaft Length: 0.10000000149011612
-      Topic:
-        Depth: 1
-        Durability Policy: Transient Local
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /chr/visualization/tcp_path
-      Value: true
-    - Alpha: 1
-      Buffer Length: 1
-      Class: rviz_default_plugins/Path
-      Color: 5; 71; 255
-      Enabled: true
-      Head Diameter: 0.029999999329447746
-      Head Length: 0.019999999552965164
-      Length: 0.30000001192092896
-      Line Style: Lines
-      Line Width: 0.00800000037997961
-      Name: Target TCP path
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Pose Color: 5; 71; 255
-      Pose Style: None
-      Radius: 0.029999999329447746
-      Shaft Diameter: 0.009999999776482582
-      Shaft Length: 0.10000000149011612
-      Topic:
-        Depth: 1
-        Durability Policy: Transient Local
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /chr/visualization/tcp_target_path
       Value: true
   Enabled: true
   Global Options:
